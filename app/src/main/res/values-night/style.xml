@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="display_style">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/displayTextSize</item>
+        <item name="android:layout_marginEnd">@dimen/display_margin</item>
+    </style>
+
+    <style name="c_button_style">
+        <item name="android:layout_marginEnd">@dimen/margin_numbers_button</item>
+        <item name="android:backgroundTint">@color/slate_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+
+    <style name="numbers_button_style">
+        <item name="android:layout_marginEnd">@dimen/margin_numbers_button</item>
+        <item name="android:backgroundTint">@color/dark_slate_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+
+    <style name="action_button_style">
+        <item name="android:backgroundTint">@color/sienna</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/button_text</item>
+    </style>
+</resources>
