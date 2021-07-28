@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".ThemeChoose">
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/radioButtonMainTheme"
+            style="@style/numbers_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_theme" />
+
+        <RadioButton
+            android:id="@+id/radioButtonDarkTheme"
+            style="@style/numbers_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dark_theme" />
+
+        <RadioButton
+            android:id="@+id/radioButtonPurpleTheme"
+            style="@style/numbers_button_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/purple_theme" />
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_ok"
+        style="@style/numbers_button_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="end"
+        android:text="@string/ok" />
+</LinearLayout>

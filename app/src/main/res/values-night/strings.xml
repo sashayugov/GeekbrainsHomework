@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="main_theme">Main theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="theme">theme</string>
+    <string name="purple_theme">Purple theme</string>
+</resources>

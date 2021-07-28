@@ -2,7 +2,6 @@
 <resources>
 
     <style name="display_style">
-        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/displayTextSize</item>
         <item name="android:layout_marginEnd">@dimen/display_margin</item>
     </style>
@@ -10,7 +9,6 @@
     <style name="c_button_style">
         <item name="android:layout_marginEnd">@dimen/margin_numbers_button</item>
         <item name="android:backgroundTint">@color/white</item>
-        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/button_text</item>
     </style>
 
@@ -18,13 +16,11 @@
     <style name="numbers_button_style">
         <item name="android:layout_marginEnd">@dimen/margin_numbers_button</item>
         <item name="android:backgroundTint">@color/silver</item>
-        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/button_text</item>
     </style>
 
     <style name="action_button_style">
         <item name="android:backgroundTint">@color/orange</item>
-        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/button_text</item>
     </style>
 

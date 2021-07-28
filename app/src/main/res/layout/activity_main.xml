@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DCDCDC"
     android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".MainActivity">
+
 
     <TextView
         android:id="@+id/display"
@@ -16,6 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         tools:text="text" />
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,11 +33,20 @@
             android:orientation="horizontal">
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_theme"
+                style="@style/c_button_style"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:textSize="15sp"
+                android:text="@string/theme" />
+
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_c"
                 style="@style/c_button_style"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:text="@string/cancel_button_text" />
 
             <com.google.android.material.button.MaterialButton
