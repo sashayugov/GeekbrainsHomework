@@ -3,6 +3,8 @@ package com.example.geekbrainshomework;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,9 +12,15 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final String NameSharedPreference = "LOGIN";
+    public static final String AppTheme = "APP_THEME";
     private TextView display;
     private Calculator calculator;
     private final static String keyCalculator = "Calculator";
+
+    private static final int MainThemeCode = 1;
+    private static final int DarkThemeCode = 2;
+    private static final int PurpleThemeCode = 3;
 
     @Override
     public void onSaveInstanceState(@NonNull Bundle instanceState) {
@@ -30,13 +38,49 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(setStyle(getCodeFromThemeChoose()));
         setContentView(R.layout.activity_main);
         calculator = new Calculator();
         initView();
     }
 
+    private int getCodeFromThemeChoose() {
+        int codeTheme;
+        codeTheme = getIntent().getIntExtra(ThemeChoose.CODE, 0);
+        if (codeTheme == 0) {
+            return getCodeTheme(codeTheme);
+        }
+        return codeTheme;
+    }
+
+    private int setStyle(int codeTheme) {
+        saveCodeTheme(getCodeFromThemeChoose());
+        switch (codeTheme) {
+            case DarkThemeCode:
+                return R.style.Theme_GeekbrainsHomeworkDark;
+            case PurpleThemeCode:
+                return R.style.Theme_GeekbrainsHomeworkPurple;
+            case MainThemeCode:
+            default:
+                return R.style.Theme_GeekbrainsHomework;
+        }
+    }
+
+    private void saveCodeTheme(int codeTheme) {
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putInt(AppTheme, codeTheme);
+        editor.apply();
+    }
+
+    private int getCodeTheme(int codeTheme){
+        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
+        return sharedPref.getInt(AppTheme, codeTheme);
+    }
+
     private void initView() {
         display = findViewById(R.id.display);
+        initButtonThemeClickListener();
         initButton1ClickListener();
         initButton2ClickListener();
         initButton3ClickListener();
@@ -54,6 +98,17 @@ public class MainActivity extends AppCompatActivity {
         initButtonSubClickListener();
         initButtonAddClickListener();
         initButtonEqClickListener();
+    }
+
+    private void initButtonThemeClickListener() {
+        Button buttonC = findViewById(R.id.button_theme);
+        buttonC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent runThemeChoose = new Intent(MainActivity.this, ThemeChoose.class);
+                startActivity(runThemeChoose);
+            }
+        });
     }
 
     private void initButtonCClickListener() {

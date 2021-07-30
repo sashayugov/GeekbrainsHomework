@@ -17,4 +17,9 @@
     <string name="point_button_text">,</string>
     <string name="_0">0</string>
     <string name="eq_button_text">=</string>
+    <string name="ok">OK</string>
+    <string name="main_theme">Main theme</string>
+    <string name="dark_theme">Dark theme</string>
+    <string name="purple_theme">Purple theme</string>
+    <string name="theme">theme</string>
 </resources>
